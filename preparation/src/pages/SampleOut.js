@@ -86,6 +86,7 @@ const SampleOut = () => {
         setReports([]);
     }
     const deleteList = (id) => {
+        console.log(id);
         const newList = reports.filter((report, index) => index != id);
         setReports(newList);
     }
