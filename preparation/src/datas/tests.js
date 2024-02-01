@@ -1,0 +1,22 @@
+export const tests = [
+    {
+        id:0,
+        test_name:"材質"
+    },
+    {
+        id:1,
+        test_name:"Coating"
+    },
+    {
+        id:2,
+        test_name:"有機"
+    },
+    {
+        id:3,
+        test_name:"電子組"
+    },
+    {
+        id:4,
+        test_name:"支援"
+    }
+]
