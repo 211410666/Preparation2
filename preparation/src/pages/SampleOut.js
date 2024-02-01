@@ -28,7 +28,7 @@ const SampleOut = () => {
         TotalSQ.textContent = "TotalSQ:"+sqcount;
         allDeleteBtn = document.querySelectorAll(".deleteBtn");
         allDeleteBtn.forEach((deleteBtn) => deleteBtn.addEventListener('click', (event) => {
-            deleteList(event.target.id.substring(9, event.target.id.length))
+            deleteList(event.currentTarget.id.substring(9, event.currentTarget.id.length))
         }))
     }, [reports]);
     const inputDataToSupabase = async()=>{
