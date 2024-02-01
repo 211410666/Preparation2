@@ -67,6 +67,7 @@ const SampleOut = () => {
     }
     const insertReport = () => {
         const reportNumber = document.querySelector('#user_reportNumber').value;
+        reportNumber = reportNumber.substring(0,11);
         const reportCategory = document.querySelector('#user_category').value;
         const reportWeight = document.querySelector('#user_weight').value;
         let reportAmount = document.querySelector('#user_amount').value;
