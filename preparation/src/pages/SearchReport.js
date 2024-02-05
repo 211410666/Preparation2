@@ -15,7 +15,7 @@ const SearchReport = () => {
             let { data, error } = await supabase
                 .from('samplereport')
                 .select('*')
-            console.log(data);
+            console.log(data.reverse());
             setReports(data);
         } catch (e) {
             console.log(e);
