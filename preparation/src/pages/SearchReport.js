@@ -22,9 +22,20 @@ const SearchReport = () => {
         }
     }
     const showSearch = () => {
+        
         const value = document.querySelector('#user_input').value;
         const ResultsOfSearch = document.querySelector('#ResultsOfSearch');
         if (value != "") {
+            ResultsOfSearch.innerHTML =`
+                <section class="simple_data_title">
+                <h4 class="s_form">ReportNo.</h4>
+                <h4 class="s_form">Category</h4>
+                <h4 class="s_form">Class</h4>
+                <h4 class="s_form">SQ</h4>
+                <h4 class="s_form">Owner</h4>
+                <h4 class="s_form">Date</h4>
+                </section>
+            `; 
             let newData = reports.filter((report) => `${report.reportnumber}`.includes(value));
             ResultsOfSearch.innerHTML += newData.map((data) => {
                 let temp_time = `${data.recorddate}`.split('/');
@@ -35,19 +46,29 @@ const SearchReport = () => {
                 if ((temp_time.localeCompare(startdefaultDate) != -1) && (temp_time.localeCompare(defaultDate) != 1)) {
                     return (`
                     <section class="simple_data">
-                    <h4>${data.reportnumber}</h4>
-                    <h4>${data.category}</h4>
-                    <h4>${data.weight_name}</h4>
-                    <h4>${data.amount}</h4>
-                    <h4>${data.user_name}</h4>
-                    <h4>${data.recorddate}</h4>
+                    <h4 class="s_form">${data.reportnumber}</h4>
+                    <h4 class="s_form">${data.category}</h4>
+                    <h4 class="s_form">${data.weight_name}</h4>
+                    <h4 class="s_form">${data.amount}</h4>
+                    <h4 class="s_form">${data.user_name}</h4>
+                    <h4 class="s_form">${data.recorddate}</h4>
                     </section>
                     `)
                 };
             }).join('');
         }
         else {
-            ResultsOfSearch.innerHTML = reports.map((data) => {
+            ResultsOfSearch.innerHTML =`
+                <section class="simple_data_title">
+                <h4 class="s_form">ReportNo.</h4>
+                <h4 class="s_form">Category</h4>
+                <h4 class="s_form">Class</h4>
+                <h4 class="s_form">SQ</h4>
+                <h4 class="s_form">Owner</h4>
+                <h4 class="s_form">Date</h4>
+                </section>
+            `; 
+            ResultsOfSearch.innerHTML += reports.map((data) => {
                 let temp_time = `${data.recorddate}`.split('/');
                 temp_time[2] = temp_time[2].split(' ')[0];
                 temp_time[1] = temp_time[1] < 10 ? "0" + temp_time[1] : temp_time[1];
@@ -55,13 +76,14 @@ const SearchReport = () => {
                 temp_time = temp_time[0] + '-' + temp_time[1] + '-' + temp_time[2];
                 if ((temp_time.localeCompare(startdefaultDate) != -1) && (temp_time.localeCompare(defaultDate) != 1)) {
                     return (`
+                    
                     <section class="simple_data">
-                    <h4>${data.reportnumber}</h4>
-                    <h4>${data.category}</h4>
-                    <h4>${data.weight_name}</h4>
-                    <h4>${data.amount}</h4>
-                    <h4>${data.user_name}</h4>
-                    <h4>${data.recorddate}</h4>
+                    <h4 class="s_form">${data.reportnumber}</h4>
+                    <h4 class="s_form">${data.category}</h4>
+                    <h4 class="s_form">${data.weight_name}</h4>
+                    <h4 class="s_form">${data.amount}</h4>
+                    <h4 class="s_form">${data.user_name}</h4>
+                    <h4 class="s_form">${data.recorddate}</h4>
                     </section>
                     `)
                 };
@@ -106,14 +128,14 @@ const SearchReport = () => {
             </section>
             <section className="UnderLine"></section>
             <section id="ResultsOfSearch" className="ResultsOfSearch">
-            <section className="simple_data_title">
-                <h4 className="s_form">ReportNo.</h4>
-                <h4 className="s_form">Category</h4>
-                <h4 className="s_form">Class</h4>
-                <h4 className="s_form">SQ</h4>
-                <h4 className="s_form">Owner</h4>
-                <h4 className="s_form">Date</h4>
-            </section>
+                <section className="simple_data_title">
+                    <h4 className="s_form">ReportNo.</h4>
+                    <h4 className="s_form">Category</h4>
+                    <h4 className="s_form">Class</h4>
+                    <h4 className="s_form">SQ</h4>
+                    <h4 className="s_form">Owner</h4>
+                    <h4 className="s_form">Date</h4>
+                </section>
                 {
                     reports.map((data) => {
                         let temp_time = `${data.recorddate}`.split('/');
@@ -123,14 +145,14 @@ const SearchReport = () => {
                         temp_time = temp_time[0] + '-' + temp_time[1] + '-' + temp_time[2];
                         if ((temp_time.localeCompare(startdefaultDate) != -1) && (temp_time.localeCompare(defaultDate) != 1)) {
                             return (
-                            <section className="simple_data">
-                            <h4 className="s_form">{data.reportnumber}</h4>
-                            <h4 className="s_form">{data.category}</h4>
-                            <h4 className="s_form">{data.weight_name}</h4>
-                            <h4 className="s_form">{data.amount}</h4>
-                            <h4 className="s_form">{data.user_name}</h4>
-                            <h4 className="s_form">{data.recorddate}</h4>
-                            </section>
+                                <section className="simple_data">
+                                    <h4 className="s_form">{data.reportnumber}</h4>
+                                    <h4 className="s_form">{data.category}</h4>
+                                    <h4 className="s_form">{data.weight_name}</h4>
+                                    <h4 className="s_form">{data.amount}</h4>
+                                    <h4 className="s_form">{data.user_name}</h4>
+                                    <h4 className="s_form">{data.recorddate}</h4>
+                                </section>
                             )
                         };
                     })
