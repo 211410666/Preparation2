@@ -328,12 +328,25 @@ Navbar
   grid-template-columns: 1fr 1fr;
 }
 .ResultsOfSearch{
-  
+  width: 90%;
+  margin: 0 auto;
 }
 .simple_data{
   display: grid;
   grid-template-columns: 4fr 2fr 2fr 1fr 2fr 4fr;
+  text-align: center;
 }
 .simple_data:hover{
   background-color: rgb(235, 229, 230);
+}
+.simple_data_title{
+  background-color: rgb(199, 203, 225);
+  text-align: center;
+  display: grid;
+  grid-template-columns: 4fr 2fr 2fr 1fr 2fr 4fr;
+}
+
+.s_form{
+  border: 1px solid black;
+  padding: 0.2rem;
 }
