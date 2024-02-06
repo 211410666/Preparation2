@@ -22,5 +22,9 @@ export const operator = [
     {
         id:5,
         opt_name:"James"
+    },
+    {
+        id:6,
+        opt_name:"支援"
     }
 ]

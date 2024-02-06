@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path='/SampleOut' element={<SampleOut/>}/>
         <Route path='/SearchReport' element={<SearchReport/>}/>
-        <Route path='/SearchReport' element={<Capacity/>}/>
+        <Route path='/Capacity' element={<Capacity/>}/>
       </Routes>
     </BrowserRouter>
   );
