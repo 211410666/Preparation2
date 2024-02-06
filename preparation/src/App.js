@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SampleOut from './pages/SampleOut';
 import SearchReport from './pages/SearchReport';
+import Capacity from './pages/Capacity';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path='/SampleOut' element={<SampleOut/>}/>
         <Route path='/SearchReport' element={<SearchReport/>}/>
+        <Route path='/SearchReport' element={<Capacity/>}/>
       </Routes>
     </BrowserRouter>
   );
