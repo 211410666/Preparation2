@@ -167,7 +167,7 @@ Navbar
   justify-content: center; /*水平對中*/
   align-items: center; /*垂直對中*/
   height: 4rem;
-  background-color: var(--clr-primary-10);
+  background-color: var(--clr-primary-8);
 }
 .nav-center {
   width: 100%;
@@ -349,4 +349,91 @@ Navbar
 .s_form{
   border: 1px solid black;
   padding: 0.2rem;
+}
+
+.Today_Personal_Capacity_Container{
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.Today_Personal_Capacity{
+  border: 2px solid var(--clr-grey-2);
+  border-radius: 0.5rem;
+  background-color: var(--clr-primary-10);
+  padding: 0.5rem 1rem;
+  box-shadow: var(--dark-shadow);
+}
+.Today_Personal_Capacity_Name{
+  border-bottom: 1.5px solid var(--clr-grey-2);
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+.ReportList{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color:var(--clr-grey-7);
+}
+.Month_Personal_Capacity_Container{
+  margin-top: 2rem;
+  border: 3px solid var(--clr-grey-2);
+  border-radius: 0.5rem;
+  background-color: var(--clr-primary-10);
+  box-shadow: var(--dark-shadow);
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
+}
+.Month_Personal_Capacity_title{
+  text-align: center;
+  padding: 1rem;
+}
+
+.left{
+  border-right: 1px dotted var(--clr-grey-2);
+  border-bottom:1px dotted var(--clr-grey-2);
+  background-color: var(--clr-primary-8);
+}
+.middle{
+  border-right: 1px dotted var(--clr-grey-2);
+  border-bottom:1px dotted var(--clr-grey-2);
+}
+.right{
+  border-bottom:1px dotted var(--clr-grey-2);
+}
+.Month_Personal_Capacity_name{
+  padding: 1em;
+  text-align: center;
+}
+.Month_Personal_Capacity_totalsq{
+  padding: 1em;
+  text-align: center;
+}
+.Month_Personal_Capacity_progress{
+  padding: 1em;
+}
+
+.Month_Personal_Capacity_progress_left{
+  display: flex;
+  align-items: center;
+}
+.progress_bar{
+  height: 50%;
+  background-color: rebeccapurple;
+  margin-right: 1.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.progress_bar2{
+  height: 50%;
+  background-color: red;
+  margin-right: 1.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.Month_Personal_Capacity_progress_right{
+  display: flex;
+  align-items: center;
 }
