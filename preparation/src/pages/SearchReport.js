@@ -15,7 +15,8 @@ const SearchReport = () => {
             let { data, error } = await supabase
                 .from('samplereport')
                 .select('*')
-            console.log(data.reverse());
+                .order('id',{ ascending: false })
+            console.log(data);
             setReports(data);
         } catch (e) {
             console.log(e);
@@ -108,6 +109,11 @@ const SearchReport = () => {
     useEffect(() => {
         getData();
     }, []);
+    useEffect(()=>{
+        reports.forEach((report)=>{
+            console.log(report.id);
+        })
+    },[reports]);
     return (
         <div className="Sample_Form">
             <section className="Sample_Header">
