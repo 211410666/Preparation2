@@ -6,9 +6,9 @@ import { supabase } from "../database/clientDB"
 
 let today = new Date();
 const monthNameShort = today.toLocaleString('en-US', {month: 'short'});
-let day = today.getDate();
-let month = today.getMonth() + 1;
-let year = today.getFullYear();
+let day = today.getDate()>9?today.getDate().toString():"0"+today.getDate().toString();
+let month = (today.getMonth() + 1>9)?(today.getMonth()+1).toString():"0"+(today.getMonth()+1).toString();
+let year = today.getFullYear().toString();
 let defaultDate = year + "/" + month + "/" + day;
 today = defaultDate;
 let sumSQ = 0;
