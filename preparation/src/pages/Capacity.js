@@ -9,10 +9,12 @@ const monthNameShort = today.toLocaleString('en-US', {month: 'short'});
 let day = today.getDate()>9?today.getDate().toString():"0"+today.getDate().toString();
 let month = (today.getMonth() + 1>9)?(today.getMonth()+1).toString():"0"+(today.getMonth()+1).toString();
 let year = today.getFullYear().toString();
+//let month ="02";
 let defaultDate = year + "/" + month + "/" + day;
 today = defaultDate;
 let sumSQ = 0;
 let sumScore = 0;
+
 
 const Capacity = () => {
 
@@ -26,6 +28,7 @@ const Capacity = () => {
                 .from('samplereport')
                 .select('*')
                 .like('recorddate', `${today}%`)
+            console.log('today',today);
             setReports(data);
 
         } catch (e) {
@@ -33,18 +36,52 @@ const Capacity = () => {
         }
     }
     const getMonthData = async () => {
-        let thisMonth = year + "/" + month;
+        let thisMonth = year + "/" + month +"/0";
+        let tempData;
         try {
             let { data, error } = await supabase
                 .from('samplereport')
                 .select('*')
                 .like('recorddate', `${thisMonth}%`)
-                console.log(data);
-            setMonthdata(data);
+            tempData = data;
         }
         catch (e) {
             console.log(e);
         }
+        thisMonth = year + "/" + month +"/1";
+        try {
+            let { data, error } = await supabase
+                .from('samplereport')
+                .select('*')
+                .like('recorddate', `${thisMonth}%`)
+            tempData = tempData.concat(data);
+        }
+        catch (e) {
+            console.log(e);
+        }
+        thisMonth = year + "/" + month +"/2";
+        try {
+            let { data, error } = await supabase
+                .from('samplereport')
+                .select('*')
+                .like('recorddate', `${thisMonth}%`)
+            tempData = tempData.concat(data);
+        }
+        catch (e) {
+            console.log(e);
+        }
+        thisMonth = year + "/" + month +"/3";
+        try {
+            let { data, error } = await supabase
+                .from('samplereport')
+                .select('*')
+                .like('recorddate', `${thisMonth}%`)
+            tempData = tempData.concat(data);
+        }
+        catch (e) {
+            console.log(e);
+        }
+        setMonthdata(tempData);
     }
     useEffect(() => {
         getData();
