@@ -36,6 +36,9 @@ const SampleOut = () => {
             
             var today = new Date();
             const operator = document.querySelector('#Operator');
+            let time = today.toLocaleString().split('/').join(' ').split(' ');
+            if(time[1].length===1)time[1]="0"+time[1];
+            if(time[2].length===1)time[2]="0"+time[2];
             reports.forEach(async(report)=>{
                 const{reportNumber,category,weight,Amount} = report;
                 console.log(reportNumber,category,weight,Amount,today.toLocaleString(),operator.value);
@@ -48,7 +51,7 @@ const SampleOut = () => {
                         weight_name:weight,
                         amount:Amount,
                         user_name:operator.value,
-                        recorddate:today.toLocaleString()
+                        recorddate:time[0]+"/"+time[1]+"/"+time[2]+" "+time[3]
                     }
                 ])
                 .select()
